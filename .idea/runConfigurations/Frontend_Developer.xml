@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="main" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory">
+  <configuration default="false" name="Frontend Developer" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory">
     <texify>
       <compiler>PDFLATEX</compiler>
       <compiler-path />
@@ -8,7 +8,7 @@
       <viewer-command />
       <compiler-arguments />
       <envs />
-      <main-file>$PROJECT_DIR$/main.tex</main-file>
+      <main-file>$PROJECT_DIR$/Masud Afsar - Frontend Developer.tex</main-file>
       <output-path>$PROJECT_DIR$/out</output-path>
       <auxil-path>{projectDir}/auxil</auxil-path>
       <compile-twice>false</compile-twice>
