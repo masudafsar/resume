@@ -41,6 +41,7 @@
 
 \RequirePackage{moresize} % Provides more font size commands (\HUGE and \ssmall)
 \RequirePackage{enumitem}
+\RequirePackage[none]{hyphenat}
 %----------------------------------------------------------------------------------------
 %	PAGE LAYOUT
 %----------------------------------------------------------------------------------------
