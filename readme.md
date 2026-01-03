@@ -1,3 +1,19 @@
-# Resume
+# Resume (LaTeX)
 
-A TeX template for Developer's Resume based on [CV-Developer](https://www.overleaf.cm/latex/templates/cv-developer/rdycxzvvnvcc) created by Omar Roldan
+This repository contains my LaTeX resume built with a custom class file.
+
+## Files
+
+- `Masud Afsar - Frontend Developer.tex`: Main resume source
+- `developercv.cls`: LaTeX class definition
+
+## Build with Docker
+
+Use the Docker image you already pulled to compile the PDF:
+
+```bash
+docker run --rm -v "$PWD":/work -w /work blang/latex \
+  latexmk -pdf "Masud Afsar - Frontend Developer.tex"
+```
+
+The generated PDF will appear in the project directory.
