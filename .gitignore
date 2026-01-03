@@ -319,3 +319,4 @@ TSWLatexianTemp*
 
 # Build output
 dist/
+.DS_Store
