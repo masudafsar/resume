@@ -67,9 +67,7 @@
 \RequirePackage[utf8]{inputenc} % Required for inputting international characters
 \RequirePackage[T1]{fontenc} % Output font encoding for international characters
 
-\RequirePackage[default]{raleway}
-%\usepackage[defaultsans]{droidsans}
-%\usepackage{cmbright}
+\RequirePackage[sfdefault]{roboto} % Roboto as the main document font
 
 \renewcommand*\familydefault{\sfdefault} % Force the sans-serif version of any font used
 
