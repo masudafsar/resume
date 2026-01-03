@@ -17,3 +17,14 @@ docker run --rm -v "$PWD":/work -w /work blang/latex \
 ```
 
 The generated PDF will appear in the project directory.
+
+## Watch and Auto-Build
+
+Run a persistent build that rebuilds on file changes:
+
+```bash
+docker run --rm -v "$PWD":/work -w /work blang/latex \
+  latexmk -pdf -pvc -interaction=nonstopmode "Masud Afsar - Frontend Developer.tex"
+```
+
+Stop the watcher with `Ctrl+C`.
