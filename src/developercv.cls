@@ -73,13 +73,19 @@
 
 %------------------------------------------------
 
+\RequirePackage{xcolor}
+\definecolor{ResumeText}{HTML}{434A54}
+
+\pagecolor{white}
+\color{ResumeText}
+
 \RequirePackage{fontawesome} % Required for FontAwesome icons
 
 % Command to output an icon in a black square box with text to the right
 \newcommand{\icon}[3]{% The first parameter is the FontAwesome icon name, the second is the box size and the third is the text
-    \vcenteredhbox{\colorbox{white}{\makebox(#2, #2){\textcolor{black}{\Large\csname fa#1\endcsname}}}}% Icon and box
+    \vcenteredhbox{\colorbox{white}{\makebox(#2, #2){\textcolor{ResumeText}{\Large\csname fa#1\endcsname}}}}% Icon and box
     \hspace{0.1cm}% Whitespace
-    \vcenteredhbox{\textcolor{black}{#3}}% Text
+    \vcenteredhbox{\textcolor{ResumeText}{#3}}% Text
 }
 
 %----------------------------------------------------------------------------------------
@@ -105,7 +111,7 @@
 % Command to output section title headings
 \newcommand{\cvsect}[1]{% The only parameter is the section text
     \vspace{\baselineskip} % Whitespace before the section title
-    \textcolor{black}{ \MakeUppercase{\textbf{#1}}} \hspace{4pt} \Vhrulefill \\% Section title
+    \textcolor{ResumeText}{ \MakeUppercase{\textbf{#1}}} \hspace{4pt} \Vhrulefill \\% Section title
 }
 
 %----------------------------------------------------------------------------------------
@@ -132,7 +138,7 @@
     &\parbox[t]{0.85\textwidth}{% 82.5% of the text width of the page
         \textbf{#2}% Entry heading text
         \hfill% Horizontal whitespace
-        {\footnotesize \textbf{\textcolor{black}{#3}}}\\% Right-aligned entry qualifier text
+        {\footnotesize \textbf{\textcolor{ResumeText}{#3}}}\\% Right-aligned entry qualifier text
         #4 % Entry description text
     }\\\\}
 
