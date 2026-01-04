@@ -18,6 +18,11 @@ multiple role variants. The layout is inspired by the Developer CV template.
 - `src/developercv.cls`: LaTeX class definition
 - `dist/`: Build output directory
 
+## Latest PDFs
+
+- [Latest resume update (Frontend Engineer)](https://github.com/masudafsar/resume/releases/latest/download/frontend-engineer.pdf)
+- [Latest resume update (Software Engineer)](https://github.com/masudafsar/resume/releases/latest/download/software-engineer.pdf)
+
 ## Requirements
 
 - Docker (uses `blang/latex` image)
