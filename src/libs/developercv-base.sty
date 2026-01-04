@@ -1,0 +1,36 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Developer CV - Base settings
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ProvidesPackage{developercv-base}[2023/10/12 Developer CV base settings]
+
+\setlength{\parindent}{0mm} % Suppress paragraph indentation
+
+\RequirePackage[hidelinks]{hyperref} % Required for links but hide the default boxes around links
+\RequirePackage{moresize} % Provides more font size commands (\HUGE and \ssmall)
+\RequirePackage{enumitem}
+\RequirePackage[none]{hyphenat}
+
+\pagestyle{empty} % No headers or footers
+
+\RequirePackage{xcolor}
+\definecolor{ResumeText}{HTML}{434A54}
+
+\pagecolor{white}
+\color{ResumeText}
+
+\RequirePackage{fontawesome} % Required for FontAwesome icons
+
+% Command to vertically centre adjacent content
+\newcommand{\vcenteredhbox}[1]{% The only parameter is for the content to centre
+    \begingroup%
+    \setbox0=\hbox{#1}\parbox{\wd0}{\box0}%
+    \endgroup%
+}
+
+% Command to output an icon in a black square box with text to the right
+\newcommand{\icon}[3]{% The first parameter is the FontAwesome icon name, the second is the box size and the third is the text
+    \vcenteredhbox{\colorbox{white}{\makebox(#2, #2){\textcolor{ResumeText}{\Large\csname fa#1\endcsname}}}}% Icon and box
+    \hspace{0.1cm}% Whitespace
+    \vcenteredhbox{\textcolor{ResumeText}{#3}}% Text
+}
