@@ -17,8 +17,7 @@ jobs:
 
       - name: Build PDFs with Docker
         run: |
-          docker run --rm -v "$PWD":/work -w /work/src blang/latex \
-            latexmk -pdf -output-directory=/work/dist variants/*.tex
+          ./make build
 
       - name: Upload PDFs to Release
         uses: softprops/action-gh-release@v2
