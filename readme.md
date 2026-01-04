@@ -1,5 +1,12 @@
 # Resume (LaTeX)
 
+[![Build](https://github.com/masudafsar/resume/actions/workflows/release.yml/badge.svg)](https://github.com/masudafsar/resume/actions/workflows/release.yml)
+[![Release](https://img.shields.io/github/v/release/masudafsar/resume?sort=semver)](https://github.com/masudafsar/resume/releases)
+[![Release Date](https://img.shields.io/github/release-date/masudafsar/resume)](https://github.com/masudafsar/resume/releases)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Contributors](https://img.shields.io/github/contributors/masudafsar/resume)](https://github.com/masudafsar/resume/graphs/contributors)
+[![Languages](https://img.shields.io/github/languages/top/masudafsar/resume)](https://github.com/masudafsar/resume)
+
 This repository contains my LaTeX resume built with a custom class file and
 multiple role variants.
 
