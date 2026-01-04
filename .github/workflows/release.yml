@@ -1,0 +1,27 @@
+name: Build and Release PDFs
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  build-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build PDFs with Docker
+        run: |
+          docker run --rm -v "$PWD":/work -w /work/src blang/latex \
+            latexmk -pdf -output-directory=/work/dist variants/*.tex
+
+      - name: Upload PDFs to Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/*.pdf
