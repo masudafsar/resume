@@ -13,8 +13,8 @@ multiple role variants. The layout is inspired by the Developer CV template.
 ## Files
 
 - `src/variants/`: Resume variants (each `.tex` file is a build target)
-- `src/variants/frontend.tex`: Frontend Developer resume
-- `src/variants/software.tex`: Software Engineer resume
+- `src/variants/frontend-engineer.tex`: Frontend Engineer resume
+- `src/variants/software-engineer.tex`: Software Engineer resume
 - `src/developercv.cls`: LaTeX class definition
 - `dist/`: Build output directory
 
@@ -28,21 +28,21 @@ Use the Docker image you already pulled to compile the PDF:
 
 ```bash
 docker run --rm -v "$PWD":/work -w /work/src blang/latex \
-  latexmk -pdf -output-directory=/work/dist variants/frontend.tex
+  latexmk -pdf -output-directory=/work/dist variants/frontend-engineer.tex
 ```
 
 Build the Software Engineer version:
 
 ```bash
 docker run --rm -v "$PWD":/work -w /work/src blang/latex \
-  latexmk -pdf -output-directory=/work/dist variants/software.tex
+  latexmk -pdf -output-directory=/work/dist variants/software-engineer.tex
 ```
 
 Build both versions at once:
 
 ```bash
 docker run --rm -v "$PWD":/work -w /work/src blang/latex \
-  latexmk -pdf -output-directory=/work/dist variants/frontend.tex variants/software.tex
+  latexmk -pdf -output-directory=/work/dist variants/frontend-engineer.tex variants/software-engineer.tex
 ```
 
 The generated PDF will appear in `dist/`.
@@ -53,10 +53,10 @@ Run Docker-based convenience scripts:
 
 ```bash
 ./make build
-./make build frontend
-./make build software
+./make build frontend-engineer
+./make build software-engineer
 ./make watch
-./make watch software
+./make watch software-engineer
 ./make clean
 ```
 
@@ -67,7 +67,7 @@ Run a persistent build that rebuilds on file changes:
 ```bash
 docker run --rm -v "$PWD":/work -w /work/src blang/latex \
   latexmk -pdf -pvc -interaction=nonstopmode -output-directory=/work/dist \
-  variants/frontend.tex
+  variants/frontend-engineer.tex
 ```
 
 Stop the watcher with `Ctrl+C`.
