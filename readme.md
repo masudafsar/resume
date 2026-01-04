@@ -8,7 +8,7 @@
 [![Languages](https://img.shields.io/github/languages/top/masudafsar/resume)](https://github.com/masudafsar/resume)
 
 This repository contains my LaTeX resume built with a custom class file and
-multiple role variants.
+multiple role variants. The layout is inspired by the Developer CV template.
 
 ## Files
 
