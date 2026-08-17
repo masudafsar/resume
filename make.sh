@@ -8,15 +8,15 @@ VARIANTS_DIR="src/variants"
 
 usage() {
   cat <<'EOF'
-Usage: scripts/resume.sh <command> [target]
+Usage: ./make.sh <command> [target]
 
 Commands:
-  build            Build both variants
-  watch            Watch and auto-build (default: frontend)
+  build            Build all variants (or one target)
+  watch            Watch all variants (or one target)
   clean            Remove files from dist/
 
 Targets for watch/build:
-  Any .tex file in ${VARIANTS_DIR} (name without extension or full filename)
+  Any .tex file in src/variants/ (with or without the .tex extension)
 EOF
 }
 
