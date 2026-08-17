@@ -17,7 +17,7 @@ jobs:
 
       - name: Build PDFs with Docker
         run: |
-          ./make.sh build
+          make build NO_OPEN=1
 
       - name: Upload PDFs to Release
         uses: softprops/action-gh-release@v2

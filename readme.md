@@ -25,50 +25,61 @@ CV template.
   headers and skill summaries.
 - `src/developercv.cls` and `src/libs/` define the document layout and reusable
   LaTeX commands.
+- `Makefile` provides build, watch, target-listing, and cleanup commands.
 - `dist/` contains generated PDFs and auxiliary build files.
 
 ## Requirements
 
+- Make and Bash.
 - Docker with a running daemon. The build uses the `blang/latex` image and pulls
   it automatically when it is not available locally.
 
 ## Build
 
-The convenience script is the recommended way to build the resumes:
+The Makefile is the recommended way to build the resumes:
 
 ```bash
-./make.sh build
+make build
 ```
 
 Without a target, every `.tex` file in `src/variants/` is built. To build one
-variant, pass its filename with or without the `.tex` extension:
+variant, set `TARGET` to its filename with or without the `.tex` extension:
 
 ```bash
-./make.sh build frontend-engineer
-./make.sh build software-engineer.tex
+make build TARGET=frontend-engineer
+make build TARGET=software-engineer.tex
 ```
 
 Generated PDFs are written to `dist/`.
+By default, each generated PDF is opened with the system PDF viewer after a
+successful build. Disable this behavior for CI or non-interactive environments:
+
+```bash
+make build NO_OPEN=1
+```
 
 ## Watch for Changes
 
-Watch and automatically rebuild every variant:
+Watching requires an explicit target:
 
 ```bash
-./make.sh watch
+make watch TARGET=software-engineer
 ```
 
-This starts one persistent Docker process per variant. A single variant can also
-be watched explicitly:
+The selected PDF is built and opened before watching begins. To watch without
+opening the PDF, use `make watch TARGET=software-engineer NO_OPEN=1`.
+
+If `TARGET` is omitted or invalid, Make prints the available targets without
+starting Docker. You can also list them directly:
 
 ```bash
-./make.sh watch software-engineer
+make list
 ```
 
 Stop the watcher with `Ctrl+C`. Remove generated output with:
 
 ```bash
-./make.sh clean
+make clean
 ```
 
 ## Direct Docker Usage
@@ -84,4 +95,5 @@ docker run --rm -v "$PWD":/work -w /work/src blang/latex \
 ## Releases
 
 Pushing a tag matching `v*` runs the GitHub Actions release workflow. It builds
-all variants and attaches the PDFs from `dist/` to the corresponding release.
+all variants with `NO_OPEN=1` and attaches the PDFs from `dist/` to the
+corresponding release.

@@ -12,12 +12,14 @@ This repository builds role-specific resumes from shared LaTeX components.
 
 ## Build, Test, and Development Commands
 
-Docker and the `blang/latex` image are required.
+Make, Bash, Docker, and the `blang/latex` image are required.
 
-- `./make.sh build` compiles every file in `src/variants/` into `dist/`.
-- `./make.sh build frontend-engineer` builds one named variant.
-- `./make.sh watch software-engineer` continuously rebuilds a variant after source changes; stop it with `Ctrl+C`.
-- `./make.sh clean` removes generated files from `dist/`.
+- `make build` compiles every file in `src/variants/` into `dist/`.
+- `make build TARGET=frontend-engineer` builds one named variant.
+- `make watch TARGET=software-engineer` continuously rebuilds the required target; stop it with `Ctrl+C`.
+- Add `NO_OPEN=1` to `build` or `watch` in CI and other non-interactive environments.
+- `make list` lists the accepted target names.
+- `make clean` removes generated files from `dist/`.
 
 There is no separate automated test suite. Treat a clean build of both variants as the required validation before submitting changes. Review the resulting PDFs for overflow, awkward page breaks, broken links, and inconsistent spacing.
 
